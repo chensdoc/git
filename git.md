@@ -486,5 +486,29 @@ git config --global user.email loen@w3cschool.cn
 忽略文件的原则是：
 
 1. 忽略操作系统自动生成的文件，比如缩略图等；
+
 2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如 Java 编译产生的 .class 文件；
+
 3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件
+
+   
+
+## 操作GitHub时避免重复登录方法
+
+1.配置环境变量
+
+​	变量：%HOME%  值：%USERPROFILE%
+
+2.在对应地址使用git bash
+
+​	mdkir _netrc       创建_netrc文件
+
+​	vim _netrc         编辑文件（-a)
+
+```
+	machine github.com
+    login yourname
+    password password
+```
+
+​	退出并保存（:wq!)
